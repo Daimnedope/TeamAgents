@@ -1,12 +1,17 @@
+This document describes only the functional specification of the Create PRD Agent.
+
+---
+
 # 1. Objective
 
-Build an agent capable of transforming a raw user request into a structured
-Product Requirements Document (PRD).
+The Create PRD Agent converts a raw user request into a structured Product
+Requirements Document.
 
-The generated PRD serves as the **primary input for all development agents**.
+The generated PRD acts as the **primary contract between agents** in the
+development pipeline.
 
-The goal is to eliminate ambiguity and produce a clear, structured specification
-that downstream agents can implement.
+The goal is to eliminate ambiguity and produce a clear, machine-readable
+specification that downstream agents can implement.
 
 ---
 
@@ -14,31 +19,31 @@ that downstream agents can implement.
 
 The Create PRD Agent must:
 
-- interpret user requests
+- interpret user project descriptions
 - extract product goals
-- identify target users
-- define functional requirements
-- create user stories
-- generate acceptance criteria
+- define target users
+- identify functional requirements
+- generate user stories
+- create acceptance criteria
 - outline technical context
-- define success criteria
+- define measurable success criteria
 
-The output must always be **structured and machine-readable**.
+The output must always be **structured and deterministic**.
 
 ---
 
-# 3. Input
+# 3. Input Specification
 
-The agent receives a project description.
+The agent receives a project description and optional constraints.
 
-Example:
+### Input Example
 
 Create a landing page for an online course platform.
 
-css
+pgsql
 Копировать код
 
-Input format:
+### Input Format
 
 ```json
 {
@@ -46,17 +51,15 @@ Input format:
   "project_type": "website | web_app | saas",
   "constraints": []
 }
-# 4. Output
+4. Output Specification
 The agent generates a PRD document.
 
-Output location:
-
+Output Location
 bash
 Копировать код
 docs/prds/<project-name>.md
-The PRD must follow a deterministic structure.
-
-Required sections:
+Required Sections
+Every generated PRD must contain the following sections:
 
 mathematica
 Копировать код
@@ -68,25 +71,31 @@ Technical Context
 Non-Functional Requirements
 Success Criteria
 Out of Scope
+The structure must remain consistent across all generated PRDs.
+
 5. PRD Structure
 Objective
-Describe what the product is and the problem it solves.
+Describe what the product is and what problem it solves.
 
-Maximum length: 2–3 sentences.
+Guidelines:
+
+2–3 sentences maximum
+
+clearly state the product goal
 
 Background
-Provide context about the request.
+Provide context about the project.
 
 Include:
 
-product idea
+the idea behind the product
 
-motivation
+motivation for building it
 
-expected value
+expected user value
 
 Target Users
-Define who the product is built for.
+Define the primary users of the product.
 
 Include:
 
@@ -94,102 +103,130 @@ user type
 
 technical skill level
 
-main needs
+key needs
 
+Example:
+
+css
+Копировать код
+Startup founders who want to launch a landing page quickly without
+technical knowledge.
 User Stories
-Each feature must be expressed as a user story.
+All features must be expressed as user stories.
 
-Format:
-
+Format
 css
 Копировать код
 As a [user]
 I want to [action]
 So that [benefit]
-User stories must include acceptance criteria.
+Example
+css
+Копировать код
+As a visitor
+I want to see the main product description
+So that I understand what the product offers.
+Acceptance Criteria
+Each user story must contain acceptance criteria.
 
-Example:
-
+Format
+sql
+Копировать код
+GIVEN [initial condition]
+WHEN [action]
+THEN [expected result]
+Example
 css
 Копировать код
 GIVEN a visitor opens the landing page
 WHEN the page loads
-THEN the main product description is visible
+THEN the main product description is visible above the fold
 Technical Context
-Provide implementation hints.
+Provide high-level technical hints for implementation.
 
-Examples:
+This section helps the Architecture Agent.
 
-possible tech stack
+Possible elements:
 
-major components
+recommended tech stack
+
+system components
+
+integration requirements
 
 API considerations
 
-integrations
-
-This section is used by the Architecture Agent.
+This section should guide architecture without enforcing implementation details.
 
 Non-Functional Requirements
-Define quality attributes.
+Define system quality attributes.
 
 Examples:
 
 nginx
 Копировать код
-performance
-security
-scalability
-availability
+Performance
+Security
+Scalability
+Availability
+Accessibility
+Example requirement:
+
+pgsql
+Копировать код
+Page load time must be under 2 seconds on standard broadband connections.
 Success Criteria
-Define measurable outcomes.
+Define measurable indicators of project success.
 
 Examples:
 
 pgsql
 Копировать код
-all acceptance criteria implemented
-tests passing
-API endpoints functional
+All user stories implemented
+All acceptance criteria satisfied
+All tests passing
+Core functionality operational
 Out of Scope
-Explicitly define what is NOT included in the project.
+Explicitly list features that are not included in the project.
 
-This prevents scope creep.
+This prevents scope creep during development.
 
 Example:
 
 nginx
 Копировать код
-payment processing
-admin dashboard
-mobile applications
+Payment processing
+Admin dashboard
+Mobile applications
 6. Validation Rules
-Before a PRD is accepted:
+A generated PRD must pass the following checks:
 
-all required sections must exist
+all required sections are present
 
-at least one user story must be present
+at least one user story exists
 
-every user story must include acceptance criteria
+each user story contains acceptance criteria
+
+the document structure matches the PRD template
 
 Incomplete PRDs must be rejected.
 
 7. Error Handling
-If the user request is ambiguous or incomplete, the agent must:
+If the user request is incomplete or ambiguous, the agent must:
 
 request clarification
 
-mark missing information
+highlight missing information
 
 avoid inventing requirements
 
-Agents must never fabricate requirements.
+Agents must never fabricate project requirements.
 
 8. Success Metrics
 The Create PRD Agent is considered successful if:
 
-generated PRDs can be parsed by downstream agents
+generated PRDs are structurally valid
 
-requirements are clear and structured
+downstream agents can parse the document
 
-development agents can start implementation without clarification
+development can begin without additional clarification
