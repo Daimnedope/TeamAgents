@@ -1,5 +1,5 @@
 
-andard specification used by the multi-agent development system.
+Standard specification used by the multi-agent development system.
 
 PRDs act as the **primary contract between agents** and define the feature
 requirements that drive architecture, implementation, and testing.
