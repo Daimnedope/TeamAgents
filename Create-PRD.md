@@ -7,7 +7,7 @@ Priority: P0 (critical)
 
 1. Objective
 
-Разработать агентный модуль Create PRD, который преобразует пользовательское описание проекта в структурированное Product Requirements Document (PRD), пригодное для дальнейшей обработки агентами системы (Planner, Architecture Agent, Code Agent, QA Agent).
+Create PRD, который преобразует пользовательское описание проекта в структурированное Product Requirements Document (PRD), пригодное для дальнейшей обработки агентами системы (Planner, Architecture Agent, Code Agent, QA Agent).
 
 Основная задача — устранить неоднозначность пользовательских запросов и предоставить машиночитаемую, формализованную спецификацию проекта.
 
