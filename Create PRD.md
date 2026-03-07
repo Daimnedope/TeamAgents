@@ -46,7 +46,7 @@ Input format:
   "project_type": "website | web_app | saas",
   "constraints": []
 }
-4. Output
+# 4. Output
 The agent generates a PRD document.
 
 Output location:
