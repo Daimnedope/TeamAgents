@@ -1,232 +1,460 @@
-This document describes only the functional specification of the Create PRD Agent.
+
+Standard specification used by the multi-agent development system.
+
+PRDs act as the **primary contract between agents** and define the feature
+requirements that drive architecture, implementation, and testing.
+
+System rules and architecture are defined in:
+
+- `AGENTS.md`
+- `PROJECT.md`
+
+PRDs must follow this structure so that downstream agents can parse them reliably.
 
 ---
 
-# 1. Objective
+# Document Metadata
 
-The Create PRD Agent converts a raw user request into a structured Product
-Requirements Document.
-
-The generated PRD acts as the **primary contract between agents** in the
-development pipeline.
-
-The goal is to eliminate ambiguity and produce a clear, machine-readable
-specification that downstream agents can implement.
-
----
-
-# 2. Responsibilities
-
-The Create PRD Agent must:
-
-- interpret user project descriptions
-- extract product goals
-- define target users
-- identify functional requirements
-- generate user stories
-- create acceptance criteria
-- outline technical context
-- define measurable success criteria
-
-The output must always be **structured and deterministic**.
+| Field | Value |
+|------|------|
+| **PRD** | [Feature / Capability Name] |
+| **Stage** | Draft \| Review \| Approved \| Building \| Released |
+| **Owner** | [Product Manager / Agent] |
+| **Created** | YYYY-MM-DD |
+| **Updated** | YYYY-MM-DD |
+| **Priority** | P0 \| P1 \| P2 \| P3 |
+| **Stakeholders** | [Teams / Agents] |
 
 ---
 
-# 3. Input Specification
+# 1. Overview
 
-The agent receives a project description and optional constraints.
+## Feature Summary
 
-### Input Example
+Brief description of the feature and the value it provides.
 
-Create a landing page for an online course platform.
+Example:
 
-pgsql
-Копировать код
+> This feature enables users to generate automated analytics reports
+and receive them by scheduled email.
 
-### Input Format
+---
+
+## Strategic Goal
+
+Explain how the feature supports the product roadmap or business strategy.
+
+---
+
+# 2. Problem Description
+
+## Current Situation
+
+Describe how the system currently behaves.
+
+---
+
+## User Pain Points
+
+Main problems experienced by users.
+
+- Pain point 1
+- Pain point 2
+- Pain point 3
+
+---
+
+## Evidence
+
+Supporting sources:
+
+- analytics metrics
+- user feedback
+- support tickets
+- competitive analysis
+
+---
+
+## Impact if Unresolved
+
+Describe the consequences if the problem is not solved.
+
+---
+
+# 3. Target Audience
+
+| Segment | Description | Needs |
+|------|------|------|
+| [Segment] | [User description] | [Primary need] |
+
+Include:
+
+- experience level
+- platform environment
+- technical knowledge
+
+---
+
+# 4. User Scenarios
+
+Each scenario represents a core user workflow.
+
+Agents use these scenarios to derive implementation tasks.
+
+---
+
+## Scenario 1 — [Title]
+
+**User role:** [persona]
+
+**Goal:** The user performs an action to achieve a result.
+
+### Acceptance Conditions
+
+```
+
+GIVEN [initial state]
+WHEN [user action]
+THEN [system result]
+
+```
+
+Optional extended validation:
+
+```
+
+GIVEN [state]
+WHEN [action]
+THEN [result]
+AND [additional validation]
+
+```
+
+---
+
+### Example Cases
+
+| Request | Result |
+|------|------|
+| `{email:"test@test.com"}` | `{status:201,user_id:"abc123"}` |
+| `{email:""}` | `{status:400,error:"email required"}` |
+
+---
+
+**Estimated Effort:** Small \| Medium \| Large  
+**Dependencies:** [other scenario or system component]
+
+---
+
+## Scenario 2 — [Title]
+
+**User role:** [persona]
+
+**Goal:** Additional workflow enabled by the feature.
+
+### Acceptance Conditions
+
+```
+
+GIVEN [state]
+WHEN [action]
+THEN [expected result]
+
+```
+
+**Estimated Effort:** Small \| Medium \| Large  
+**Dependencies:** Scenario 1
+
+---
+
+# 5. Functional Scope
+
+## Included
+
+Capabilities implemented by this feature.
+
+- Capability A
+- Capability B
+- Capability C
+
+---
+
+## Excluded
+
+| Feature | Reason |
+|------|------|
+| Feature X | Future release |
+| Feature Y | Outside project scope |
+
+---
+
+## Future Extensions
+
+Potential improvements that may be implemented later.
+
+---
+
+# 6. Technical Context
+
+This section helps the **Architecture Agent** and **Implementation Agent**.
+
+Full technical conventions are defined in `PROJECT.md`.
+
+---
+
+## Relevant Components
+
+| Location | Description |
+|------|------|
+| `src/services/...` | business logic |
+| `src/api/...` | API layer |
+| `src/agents/...` | agent integration |
+| `tests/...` | testing patterns |
+
+---
+
+## Architecture Pattern Reference
+
+Example pattern that should be followed.
+
+Agents should replicate existing design patterns defined in the repository.
+
+---
+
+## Data Layer Updates
+
+Describe database changes if required.
+
+Example:
+
+```
+
+table reports
+id
+user_id
+schedule
+created_at
+
+````
+
+---
+
+## API Specification
+
+**POST** `/reports`
+
+Request
 
 ```json
 {
-  "project_description": "string",
-  "project_type": "website | web_app | saas",
-  "constraints": []
+  "user_id": "string",
+  "schedule": "string"
 }
-4. Output Specification
-The agent generates a PRD document.
+````
 
-Output Location
-bash
-Копировать код
-docs/prds/<project-name>.md
-Required Sections
-Every generated PRD must contain the following sections:
+Response
 
-mathematica
-Копировать код
-Objective
-Background
-Target Users
-User Stories
-Technical Context
-Non-Functional Requirements
-Success Criteria
-Out of Scope
-The structure must remain consistent across all generated PRDs.
+```json
+{
+  "id": "string",
+  "created": true
+}
+```
 
-5. PRD Structure
-Objective
-Describe what the product is and what problem it solves.
+Possible errors
 
-Guidelines:
+```
+400 invalid request
+403 unauthorized
+500 internal error
+```
 
-2–3 sentences maximum
+---
 
-clearly state the product goal
+## Technical Constraints
 
-Background
-Provide context about the project.
+* Must integrate with the existing authentication system
+* Target response time: < 200ms p95
+* Must follow coding standards defined in `PROJECT.md`
 
-Include:
+---
 
-the idea behind the product
+# 7. UX / Interaction Flow
 
-motivation for building it
+High-level interaction flow.
 
-expected user value
+```
+User action
+   ↓
+UI request
+   ↓
+API validation
+   ↓
+Service logic
+   ↓
+Database update
+   ↓
+Response
+```
 
-Target Users
-Define the primary users of the product.
+---
 
-Include:
+## Error Handling
 
-user type
+| Situation     | Message                        | Recovery      |
+| ------------- | ------------------------------ | ------------- |
+| Invalid input | "Please provide a valid value" | Correct input |
+| Network error | "Connection failed"            | Retry         |
 
-technical skill level
+---
 
-key needs
+# 8. Quality Requirements
 
-Example:
+| Category      | Requirement          |
+| ------------- | -------------------- |
+| Performance   | API response < 200ms |
+| Reliability   | 99.9% uptime         |
+| Accessibility | WCAG 2.1 AA          |
+| Code Quality  | > 80% test coverage  |
 
-css
-Копировать код
-Startup founders who want to launch a landing page quickly without
-technical knowledge.
-User Stories
-All features must be expressed as user stories.
+Validation methods:
 
-Format
-css
-Копировать код
-As a [user]
-I want to [action]
-So that [benefit]
-Example
-css
-Копировать код
-As a visitor
-I want to see the main product description
-So that I understand what the product offers.
-Acceptance Criteria
-Each user story must contain acceptance criteria.
+* automated testing
+* load testing
+* accessibility audits
 
-Format
-sql
-Копировать код
-GIVEN [initial condition]
-WHEN [action]
-THEN [expected result]
-Example
-css
-Копировать код
-GIVEN a visitor opens the landing page
-WHEN the page loads
-THEN the main product description is visible above the fold
-Technical Context
-Provide high-level technical hints for implementation.
+---
 
-This section helps the Architecture Agent.
+# 9. Implementation Plan
 
-Possible elements:
+Development must follow the architecture defined in `PROJECT.md`.
 
-recommended tech stack
+---
 
-system components
+## Phase 1 — Data Layer
 
-integration requirements
+Tasks:
 
-API considerations
+* implement schema changes
+* create migration
+* add unit tests
 
-This section should guide architecture without enforcing implementation details.
+Validation:
 
-Non-Functional Requirements
-Define system quality attributes.
+run project validation pipeline.
 
-Examples:
+---
 
-nginx
-Копировать код
-Performance
-Security
-Scalability
-Availability
-Accessibility
-Example requirement:
+## Phase 2 — Business Logic
 
-pgsql
-Копировать код
-Page load time must be under 2 seconds on standard broadband connections.
-Success Criteria
-Define measurable indicators of project success.
+Tasks:
 
-Examples:
+* implement service logic
+* add validation
+* write unit tests
 
-pgsql
-Копировать код
-All user stories implemented
-All acceptance criteria satisfied
-All tests passing
-Core functionality operational
-Out of Scope
-Explicitly list features that are not included in the project.
+Validation:
 
-This prevents scope creep during development.
+run project validation pipeline.
 
-Example:
+---
 
-nginx
-Копировать код
-Payment processing
-Admin dashboard
-Mobile applications
-6. Validation Rules
-A generated PRD must pass the following checks:
+## Phase 3 — API Layer
 
-all required sections are present
+Tasks:
 
-at least one user story exists
+* implement endpoint
+* create integration tests
+* connect UI
 
-each user story contains acceptance criteria
+Validation:
 
-the document structure matches the PRD template
+run project validation pipeline.
 
-Incomplete PRDs must be rejected.
+---
 
-7. Error Handling
-If the user request is incomplete or ambiguous, the agent must:
+# 10. Deployment Strategy
 
-request clarification
+| Stage    | Users         | Requirement        |
+| -------- | ------------- | ------------------ |
+| Internal | team only     | no critical issues |
+| Beta     | limited users | stable metrics     |
+| Release  | all users     | production ready   |
 
-highlight missing information
+---
 
-avoid inventing requirements
+## Feature Flag
 
-Agents must never fabricate project requirements.
+| Parameter        | Value            |
+| ---------------- | ---------------- |
+| Flag name        | `[feature_flag]` |
+| Default state    | disabled         |
+| Rollout strategy | gradual          |
 
-8. Success Metrics
-The Create PRD Agent is considered successful if:
+---
 
-generated PRDs are structurally valid
+# 11. Risk Assessment
 
-downstream agents can parse the document
+| Risk              | Probability | Impact | Mitigation    |
+| ----------------- | ----------- | ------ | ------------- |
+| dependency delay  | medium      | high   | fallback plan |
+| performance issue | low         | medium | load testing  |
 
-development can begin without additional clarification
+---
+
+# 12. Open Questions
+
+| # | Question | Owner   | Status |
+| - | -------- | ------- | ------ |
+| 1 | [topic]  | [owner] | open   |
+
+---
+
+# 13. Agent Operating Rules
+
+These rules guide autonomous development agents.
+
+---
+
+## Allowed
+
+Agents may:
+
+* run validation commands
+* update files related to the feature
+* reuse existing patterns
+
+---
+
+## Requires Approval
+
+Agents must request approval before:
+
+* adding dependencies
+* modifying shared interfaces
+* changing database schemas beyond this PRD
+
+---
+
+## Forbidden
+
+Agents must never:
+
+* commit secrets
+* remove tests
+* modify historical migrations
+* bypass validation rules
+
+---
+
+# 14. Completion Checklist
+
+Before marking the feature complete:
+
+* [ ] All acceptance conditions satisfied
+* [ ] Tests passing
+* [ ] Code coverage threshold met
+* [ ] Security checks passed
+* [ ] Documentation updated
+* [ ] Code review completed
+
