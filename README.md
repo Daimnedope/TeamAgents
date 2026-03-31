@@ -13,9 +13,11 @@ This repository defines a practical instruction system for building educational 
 1. `AGENTS.md`
 2. `docs/prd/CREATE-PRD.md`
 3. `docs/prd/PRD.md`
-4. `commands/README.md`
-5. `SKILLS.md`
-6. `hooks/README.md`
+4. `PROJECT.md`
+5. `docs/prd/PRD-example-edu-mini-product.md` (пример)
+6. `commands/README.md`
+7. `SKILLS.md`
+8. `hooks/README.md`
 
 ## Project Goal
 
