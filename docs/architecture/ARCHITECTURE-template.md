@@ -8,44 +8,44 @@
 
 ## 2. Main Flows
 
-Опиши 1-2 ключевых пользовательских сценария (flows), которые покрывает архитектура.
+Describe 1-2 key user flows covered by this architecture.
 
 ## 3. High-level Design
 
-- Основные модули/слои (UI, сервисы, API, данные)
-- Как они взаимодействуют между собой (кратко)
+- Main modules/layers (UI, services, API, data)
+- How these modules interact (briefly)
 
 ## 4. Components
 
-Перечисли основные компоненты и их ответственность:
+List the main components and their responsibilities:
 
 - Component A: ...
 - Component B: ...
 
 ## 5. Data & State
 
-- Где хранится состояние
-- Какие основные структуры данных используются
+- Where state is stored
+- Core data structures used
 
 ## 6. External Dependencies
 
-- Какие внешние сервисы/библиотеки используются
-- Что будет, если они недоступны
+- External services/libraries used
+- What happens if they become unavailable
 
 ## 7. Trade-offs & Decisions
 
-- Какие были варианты
-- Почему выбран текущий подход
+- Alternatives that were considered
+- Why this approach was selected
 
 ## 8. Risks & Mitigations
 
-- Риск 1 → как уменьшаем
-- Риск 2 → как уменьшаем
+- Risk 1 -> mitigation
+- Risk 2 -> mitigation
 
 ## 9. Alignment with PRD
 
-- Как каждый главный модуль помогает выполнить acceptance criteria из PRD
+- How each core module supports PRD acceptance criteria
 
 ## 10. Future Extensions
 
-- Идеи, которые можно добавить в следующих итерациях
+- Ideas that can be added in future iterations

@@ -1,8 +1,8 @@
 # PROJECT.md — Project Configuration
 
-## Tech Stack (шаблон)
+## Tech Stack (template)
 
-Заполни, когда определитесь с реализацией конкретных мини-продуктов/сайтов.
+Fill this once you decide the implementation stack for your specific mini-products/websites.
 
 - Language: `[TypeScript | Python | ...]`
 - Runtime: `[Node.js | Python | ...]`
@@ -14,9 +14,9 @@
 - Type checker: `[tsc | mypy | ... | none]`
 - Package manager: `[pnpm | npm | yarn | ...]`
 
-## Commands (шаблон)
+## Commands (template)
 
-Используй подходящий набор команд под выбранный стек.
+Use the command set that matches your selected stack.
 
 - Install: `[pnpm install]`
 - Dev server: `[pnpm dev]`
@@ -25,17 +25,17 @@
 - Lint: `[pnpm lint]`
 - Typecheck: `[pnpm typecheck]`
 
-## Validation Command (перед коммитом)
+## Validation Command (before commit)
 
-Пример (замени под свой стек):
+Example (replace with your stack):
 
 ```bash
 [pnpm test && pnpm typecheck && pnpm lint]
 ```
 
-## Directory Conventions (рекомендации)
+## Directory Conventions (recommended)
 
-Обычно удобно держать:
+A common practical structure:
 
 ```
 src/
@@ -50,4 +50,4 @@ commands/
 hooks/
 ```
 
-Если у вас другая структура — зафиксируй её тут.
+If your team uses a different structure, document it here.

@@ -1,8 +1,8 @@
 # Agent.md
 
-Короткий alias под твою последовательность из задания.
+Short alias for your assignment sequence.
 
-Основной документ с инструкциями по ролям и правилам находится здесь: `AGENTS.md`.
+The primary document with role instructions and rules is here: `AGENTS.md`.
 
-См.:
-- `AGENTS.md` (роли, workflow, правила)
+See:
+- `AGENTS.md` (roles, workflow, rules)

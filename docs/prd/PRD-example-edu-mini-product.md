@@ -2,72 +2,72 @@
 
 ## 1. Product Summary
 
-- **Name:** Онлайн-тренажер карточек + мини-тест
-- **One-line value proposition:** студент учит тему через карточки и закрепляет знания мини-тестом с быстрым фидбеком.
-- **Audience:** студенты (1–3 курс), преподаватели как кураторы
+- **Name:** Flashcard Trainer + Mini Quiz
+- **One-line value proposition:** students learn a topic via flashcards and reinforce understanding with a quick quiz and feedback.
+- **Audience:** students (years 1-3), instructors as supervisors
 
 ## 2. Problem
 
-Студентам сложно стабильно практиковаться: материалы есть, но нет “коротких циклов” упражнений и проверки понимания.
+Students struggle to practice consistently: materials exist, but there are no short learning cycles with immediate understanding checks.
 
 ## 3. Goals and Metrics
 
-- Goal 1: сократить время прохождения темы с “чтения” до “практики”
-- Goal 2: обеспечить быстрый фидбек по ошибкам
+- Goal 1: reduce time from "reading" to "active practice"
+- Goal 2: provide fast feedback on mistakes
 - Success metrics:
-  - не менее 70% пользователей проходят мини-тест после просмотра карточек
-  - среднее время прохождения карточек+теста <= 10 минут
+  - at least 70% of users complete the mini quiz after viewing flashcards
+  - average flashcards + quiz completion time <= 10 minutes
 
 ## 4. Scope
 
 ### In Scope
 
-- список тем
-- карточки внутри темы
-- мини-тест (5 вопросов)
-- оценка результата и фидбек (правильно/неправильно + правильный ответ)
+- topic list
+- flashcards within a topic
+- mini quiz (5 questions)
+- score and feedback (correct/incorrect + correct answer)
 
 ### Out of Scope
 
-- регистрация пользователей
-- сложная статистика (графики, долгосрочный прогресс)
-- платежи и подписки
+- user registration
+- advanced analytics (charts, long-term progress)
+- payments and subscriptions
 
 ## 5. User Stories
 
-1. Как студент, я хочу открыть тему и увидеть набор карточек, чтобы понимать материал.
-2. Как студент, я хочу пройти мини-тест по теме, чтобы закрепить знания.
-3. Как студент, я хочу получить результат с пояснениями, чтобы исправить ошибки.
+1. As a student, I want to open a topic and view flashcards so I can understand the material.
+2. As a student, I want to complete a mini quiz for the topic so I can reinforce what I learned.
+3. As a student, I want to receive results with explanations so I can correct mistakes.
 
 ## 6. Acceptance Criteria
 
-- [ ] Пользователь может выбрать тему из списка.
-- [ ] Для выбранной темы отображаются карточки (минимум 5).
-- [ ] Пользователь может начать мини-тест (ровно 5 вопросов).
-- [ ] После отправки ответов показывается итоговая оценка (процент).
-- [ ] Для каждого неправильного ответа отображается правильный ответ и краткое пояснение.
+- [ ] User can select a topic from the list.
+- [ ] Flashcards are shown for the selected topic (minimum 5).
+- [ ] User can start a mini quiz (exactly 5 questions).
+- [ ] After submission, the final score is displayed (percentage).
+- [ ] For each incorrect answer, the correct answer and a short explanation are shown.
 
 ## 7. Non-functional Requirements
 
-- Performance: экран темы и карточек открывается за <= 2 секунд (в демо без медленных внешних API)
-- Accessibility: контраст, читаемый размер шрифта, навигация с клавиатуры
-- Maintainability: структура кода отделяет UI от логики теста
-- Security: не обрабатываем персональные данные и не требуем авторизации
+- Performance: topic and flashcard screens load in <= 2 seconds (demo mode without slow external APIs)
+- Accessibility: proper contrast, readable font size, keyboard navigation
+- Maintainability: code structure separates UI from quiz logic
+- Security: no personal data processing and no authentication required
 
 ## 8. Risks and Assumptions
 
-- Риск: слишком большой объем контента для карточек затормозит демо.
-  - Митигирование: минимум 1 тема и 5 карточек.
-- Ассумпция: преподаватель предоставит список тем и формулировки вопросов.
+- Risk: too much flashcard content can slow down the demo.
+  - Mitigation: keep at least 1 topic and 5 flashcards.
+- Assumption: instructor provides topic list and question wording.
 
 ## 9. Milestones
 
-- M1: CRUD контента для темы + отображение карточек
-- M2: мини-тест (5 вопросов) + подсчет результата
-- M3: фидбек и финальная проверка AC
+- M1: topic content CRUD + flashcard rendering
+- M2: mini quiz (5 questions) + scoring
+- M3: feedback output + final AC verification
 
 ## 10. Definition of Done
 
-- PRD согласован
-- Все acceptance criteria отмечены как выполненные
-- Демо-сценарий записан/описан
+- PRD is approved
+- All acceptance criteria are marked as complete
+- Demo scenario is documented

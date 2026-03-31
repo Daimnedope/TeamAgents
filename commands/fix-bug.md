@@ -6,35 +6,35 @@ Handle a bug from report to verified fix in a structured way.
 
 ## Inputs
 
-- Bug description (symptoms, where/когда)
+- Bug description (symptoms, where/when)
 - Expected behavior
-- Links: PRD section or acceptance criterion (если есть)
+- Links: PRD section or acceptance criterion (if available)
 
 ## Steps
 
 1. Understand the bug:
-   - Reproduce it шаг за шагом.
-   - Зафиксировать минимальный сценарий воспроизведения.
-2. Найти причину:
-   - Определить, в каком модуле/файле ошибка проявляется.
-   - Сопоставить с текущим PRD и ожидаемым поведением.
-3. Спланировать исправление:
-   - Кратко сформулировать, что нужно изменить (без лишнего рефакторинга).
-4. Внести исправление:
-   - Изменить код минимально, сохранив текущий дизайн.
-5. Проверить:
-   - Повторить сценарий воспроизведения — убедиться, что баг исчез.
-   - Убедиться, что нет нового нежелательного поведения.
-6. Обновить PRD/документацию:
-   - Если поведение меняется с точки зрения пользователя, обновить PRD.
+   - Reproduce it step by step.
+   - Record the minimal reproducible scenario.
+2. Find the root cause:
+   - Identify which module/file triggers the issue.
+   - Compare actual behavior with current PRD expectations.
+3. Plan the fix:
+   - Define the minimal change needed (avoid unnecessary refactoring).
+4. Apply the fix:
+   - Update code with the smallest safe change while preserving current design.
+5. Verify:
+   - Re-run the reproducible scenario and confirm the bug is gone.
+   - Confirm no new undesired behavior appears.
+6. Update PRD/documentation:
+   - If user-visible behavior changes, update PRD notes.
 
 ## Expected Outputs
 
-- Краткое описание причины бага (root cause).
-- Список изменений (короткий, в 2-5 пунктов).
-- Подтверждение, что сценарий воспроизведения проходит корректно.
+- Short root-cause description.
+- Change list (2-5 concise points).
+- Confirmation that the reproducible scenario now passes.
 
 ## Failure Handling
 
-- Если баг не воспроизводится: зафиксировать, какие шаги пробовали, и что видим вместо этого.
-- Если исправление ломает другой сценарий: откатиться и пересмотреть план исправления.
+- If the bug is not reproducible: document attempted steps and observed results.
+- If the fix breaks another scenario: roll back and revise the fix plan.

@@ -22,7 +22,7 @@ This repository defines a practical instruction system for building educational 
 2. `docs/prd/CREATE-PRD.md`
 3. `docs/prd/PRD.md`
 4. `PROJECT.md`
-5. `docs/prd/PRD-example-edu-mini-product.md` (пример)
+5. `docs/prd/PRD-example-edu-mini-product.md` (example)
 6. `commands/README.md`
 7. `SKILLS.md`
 8. `hooks/README.md`
