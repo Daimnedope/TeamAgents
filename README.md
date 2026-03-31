@@ -1,0 +1,22 @@
+# Team Agents for Study Products
+
+This repository defines a practical instruction system for building educational mini-products and websites in Cursor:
+
+- PRD creation and validation flow
+- Agent roles and responsibilities
+- Reusable command workflows
+- Skills catalog for repeatable tasks
+- Hooks for quality and safety checks
+
+## Start Order
+
+1. `AGENTS.md`
+2. `docs/prd/CREATE-PRD.md`
+3. `docs/prd/PRD.md`
+4. `commands/README.md`
+5. `SKILLS.md`
+6. `hooks/README.md`
+
+## Project Goal
+
+Create a clear, reusable process where students can go from idea to working mini-product with consistent quality, predictable steps, and transparent progress.
