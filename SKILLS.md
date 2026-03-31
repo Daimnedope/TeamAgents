@@ -21,6 +21,14 @@ A compact catalog of reusable skills for educational mini-product development.
 5. **Student Demo Skill**
    - Prepares short demo flow for teacher presentation.
 
+## Implemented Skill Files
+
+- `SKILLS/problem-framing.md`
+- `SKILLS/prd-structuring.md`
+- `SKILLS/mvp-scoping.md`
+- `SKILLS/quality-review.md`
+- `SKILLS/student-demo.md`
+
 ## Skill Card Format
 
 - Name

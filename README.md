@@ -8,6 +8,14 @@ This repository defines a practical instruction system for building educational 
 - Skills catalog for repeatable tasks
 - Hooks for quality and safety checks
 
+## Included Components
+
+- `agents`: `AGENTS.md`, `Agent.md`
+- `prd`: `docs/prd/CREATE-PRD.md`, `docs/prd/PRD.md`, example PRD
+- `commands`: reusable workflow docs in `commands/`
+- `skills`: reusable skill cards in `SKILLS/`
+- `hooks`: PowerShell hook scripts in `hooks/`
+
 ## Start Order
 
 1. `AGENTS.md`

@@ -35,3 +35,15 @@ Set-Content ".git/hooks/pre-commit" "#!/usr/bin/env pwsh`npwsh -NoProfile -Execu
 3. Make sure `pwsh` is available in PATH.
 
 Now each commit runs required-file and PRD checks automatically.
+
+## Additional Hook Scripts
+
+- `hooks/pre-prd-check.ps1` - validates that PRD files exist before PRD generation/update flow.
+- `hooks/post-validate-report.ps1` - writes markdown validation reports to `hooks/reports/`.
+- `hooks/install-hooks.ps1` - installs the pre-commit hook automatically into `.git/hooks/`.
+
+### Quick Install
+
+```powershell
+pwsh -File hooks/install-hooks.ps1
+```
