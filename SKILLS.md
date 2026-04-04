@@ -2,7 +2,9 @@
 
 ## Purpose
 
-A compact catalog of reusable skills for educational mini-product development.
+A compact catalog of reusable **study** skill cards for educational mini-product development.
+For Claude Code automation, see the skill directories under `.claude/skills/` (each contains a
+`SKILL.md`). Both layers can be used side by side.
 
 ## Initial Skill Set
 
