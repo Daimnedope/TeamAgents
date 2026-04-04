@@ -55,7 +55,7 @@ So that <benefit/value>
 - Identify coding conventions (naming, file organization, error handling, logging)
 - Extract common patterns for the feature's domain
 - Document anti-patterns to avoid
-- Check `CLAUDE.md` and `AGENTS.md` for project-specific rules
+- Check `CLAUDE.md` and `PROJECT.md` for project-specific rules
 
 **3. Dependency Analysis**
 

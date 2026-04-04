@@ -5,13 +5,10 @@
 
 ## Project Overview
 
-Agentic product development workspace. Subagents under `.claude/agents/` cover requirements,
-architecture, implementation, testing, review, and documentation.
+Agentic product development team workspace. Multi-agent architecture with specialized
+roles handling requirements, architecture, implementation, testing, review, and documentation.
 
-**Study workflow (Cursor)**: For course-style mini-products, follow `AGENTS.md`, then `docs/prd/`,
-`commands/`, root-level skill cards in `SKILLS/` + `SKILLS.md`, and Windows hooks in `hooks/`.
-
-**Tech stack**: See `PROJECT.md` for language, runtime, framework, database, and tooling.
+**Tech Stack**: See `PROJECT.md` for language, runtime, framework, database, and tooling.
 
 ## Agent Team Structure
 

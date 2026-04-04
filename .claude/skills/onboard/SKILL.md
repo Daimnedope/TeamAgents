@@ -20,9 +20,8 @@ Create onboarding documentation by analyzing the actual codebase.
 ## Step 2: Read Core Files
 
 - `PROJECT.md` and `CLAUDE.md` for project configuration
-- `AGENTS.md` for team instructions
 - All README files
-- All docs in `docs/architecture/`
+- Docs under `docs/` (e.g. `docs/state/`, `docs/templates/`, `docs/rca/`, `docs/prds/` when present)
 - Configuration files (package.json, tsconfig.json, etc.)
 
 ## Step 3: Analyze Architecture

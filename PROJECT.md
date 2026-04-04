@@ -1,9 +1,8 @@
 # PROJECT.md
 
-> **Project-specific configuration** for delivery agents and for your own mini-product codebase.
-> The **study track** (roles, PRD flow, Cursor commands) lives in `AGENTS.md`, `docs/prd/`, `commands/`, and `SKILLS/`. The **automation track** uses Claude Code subagents under `.claude/agents/` and skills under `.claude/skills/`.
->
-> Fill in every section below before running workflows so tools and agents share one source of truth for stack, commands, and layout.
+> **Project-specific configuration for the agentic development team.**
+> Fill in every section below before running workflows. Agents read this file to understand
+> your product, tech stack, commands, directory layout, and conventions.
 
 ---
 

@@ -12,7 +12,7 @@ Save the current work context so it can be resumed later.
 
 - Run `git status` and `git branch --show-current` to capture branch and working tree state
 - Read the existing `docs/state/STATE.md`
-- Check for active PRDs in `docs/prds/`, design docs in `docs/architecture/`, and plans in `docs/plans/`
+- Check for active PRDs in `docs/prds/`, session state in `docs/state/`, and templates in `docs/templates/`
 
 ## Step 2: Update STATE.md
 

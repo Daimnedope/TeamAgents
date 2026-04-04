@@ -23,9 +23,8 @@ Run: `find . -type f -not -path './.git/*' -not -path './node_modules/*' -not -p
 ### 2. Read Core Documentation
 
 - Read `CLAUDE.md` for project rules and conventions
-- Read `AGENTS.md` for universal agent instructions
+- Read `PROJECT.md` for stack, commands, and layout
 - Read any README files at project root and major directories
-- Read architecture docs in `docs/architecture/`
 - Read reference docs in `.claude/reference/` if they exist
 
 ### 3. Identify Key Files
@@ -44,8 +43,8 @@ Run: `git log -10 --oneline`
 Check current branch and status:
 Run: `git status`
 
-Check for open PRDs and design docs:
-Run: `ls docs/prds/ docs/architecture/ 2>/dev/null`
+Check for open PRDs and shared docs:
+Run: `ls docs/prds/ docs/state/ docs/templates/ 2>/dev/null`
 
 ## Output Report
 
